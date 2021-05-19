@@ -1,10 +1,10 @@
 # MCA-Practical-2021
 
 # Java Programming (Lab) - Practical Assignments List
-1. Write a program to display transpose of matrix.  
+1. Write a program to display transpose of matrix.  https://github.com/Rohit-MyRG/MCA-Practical-2021/blob/main/TransposeMatrix.java
 2. Write a program to demonstrate the use of
-   a) Package  
-   b) Interface   
+   a) Package  https://github.com/Rohit-MyRG/MCA-Practical-2021/blob/main/PackageB.java & https://github.com/Rohit-MyRG/MCA-Practical-2021/blob/main/PackageA.java
+   b) Interface   https://github.com/Rohit-MyRG/MCA-Practical-2021/blob/main/InterfaceExample.java
    c) abstract class   
 3. Write a program to demonstrate
   a) Operations performed on String   
