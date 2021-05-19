@@ -1,0 +1,80 @@
+import javax.swing.*;    
+import java.awt.event.*;
+
+public class JMenuNotepad implements ActionListener
+{    
+	JFrame f;    
+	JMenuBar mb;    
+	JMenu file,edit,help,submenu;    
+	JMenuItem cut,copy,paste,selectAll,open,openwith;    
+	JTextArea ta;    
+	JMenuNotepad()
+	{    
+		f=new JFrame();  
+		
+		cut=new JMenuItem("cut");    
+		copy=new JMenuItem("copy");    
+		paste=new JMenuItem("paste");    
+		selectAll=new JMenuItem("selectAll");  
+		open = new JMenuItem("Open");
+		openwith = new JMenuItem("Open With");
+		
+		cut.addActionListener(this);    
+		copy.addActionListener(this);    
+		paste.addActionListener(this);    
+		selectAll.addActionListener(this);    
+		
+		mb=new JMenuBar();  
+		
+		file=new JMenu("File");    
+		edit=new JMenu("Edit");    
+		help=new JMenu("Help");  
+		submenu=new JMenu("Sub Menu");  
+		
+		edit.add(cut);
+		edit.add(copy);
+		edit.add(paste);
+		edit.add(selectAll);  
+		edit.addSeparator();  
+		submenu.add(open);
+		submenu.add(openwith);
+		edit.add(submenu);
+		
+		mb.add(file);
+		mb.add(edit);
+		mb.add(help);    
+		
+		ta=new JTextArea(); 		
+		ta.setBounds(5,5,360,320);    
+		f.add(mb);
+		f.add(ta);  
+		
+		f.setJMenuBar(mb);  
+		f.setLayout(null);    
+		f.setSize(400,400);    
+		f.setVisible(true); 
+
+		f.addWindowListener(new WindowAdapter()
+		{
+			public void windowClosing(WindowEvent we) 
+			{
+				System.exit(0);
+			}
+		});
+	}     
+	public void actionPerformed(ActionEvent e) 
+	{    
+		if(e.getSource()==cut)    
+			ta.cut();    
+		if(e.getSource()==paste)    
+			ta.paste();    
+		if(e.getSource()==copy)    
+			ta.copy();    
+		if(e.getSource()==selectAll)    
+			ta.selectAll();    
+	}     
+	public static void main(String[] args) 
+	{    
+		new JMenuNotepad();    
+	}    
+}    
